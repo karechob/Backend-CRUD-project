@@ -7,22 +7,23 @@ const Students = db.define("students", {
     allowNull: false,
   },
   lastName: {
-
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   email: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      },
   },
   imageUrl: {
     defaultValue: "https://s28151.pcdn.co/wp-content/uploads/2020/08/our-campus-location-banner.jpg",
     type: DataTypes.STRING,
     allowNull: false,
   },
-  address: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  description: {
-    type: DataTypes.TEXT('long'),
+  gpa: {
+    type: DataTypes.DECIMAL(1,1),
     allowNull: false,
   },
 });
