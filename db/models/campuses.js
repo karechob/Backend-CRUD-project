@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const db = require("../db");
 
-const Campuses = db.define("campuses", {
+const Campus = db.define("campus", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -21,4 +21,4 @@ const Campuses = db.define("campuses", {
   },
 });
 
-module.exports = Campuses;
+module.exports = Campus;

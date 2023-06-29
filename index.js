@@ -2,7 +2,7 @@ const express = require("express");
 const db = require("./db");
 
 const app = express();
-const PORT = "8080";
+const PORT = 8080;
 
 // Mount on API
 app.use("/api", require("./api"));

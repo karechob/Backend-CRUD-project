@@ -7,12 +7,14 @@ const { Student} = require("../db/models");
 router.get("/", async (req, res, next) => {
   try {
     const allStudent = await Student.findAll();
-
-    allStudent
-      ? res.status(200).json(allStudent) 
-      : res.status(404).send("Student List Not Found");
+    console.log("all students " + allStudent);
+   if (allStudent) {
+    res.status(200).json(allStudent) 
+   } else {
+    res.status(404).send("Student List Not Found");
+   }
   } catch (error) {
-    next(error);
+    console.log(error);
   }
 });
 

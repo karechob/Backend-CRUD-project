@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const db = require("../db");
 
-const Students = db.define("students", {
+const Student = db.define("student", {
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -23,9 +23,9 @@ const Students = db.define("students", {
     allowNull: false,
   },
   gpa: {
-    type: DataTypes.DECIMAL(1,1),
+    type: DataTypes.DECIMAL(2,1), 
     allowNull: false,
   },
 });
 
-module.exports = Students;
+module.exports = Student; 
