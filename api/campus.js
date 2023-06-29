@@ -7,12 +7,12 @@ const { Campus } = require("../db/models");
 router.get("/", async (req, res, next) => {
   try {
     const allCampus = await Campus.findAll();
-
+    console.log("this is all campus: " + allCampus)
     allCampus
       ? res.status(200).json(allCampus)
       : res.status(404).send("Campus List Not Found");
   } catch (error) {
-    next(error);
+    console.log(error);
   }
 });
 

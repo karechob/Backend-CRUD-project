@@ -1,13 +1,15 @@
-const Campuses = require("./campuses");
-const Students = require("./students");
+const Campus = require("./campuses");
+const Student = require("./students");
 
 // Associations Go Here
 
 // Many to Many
-Campuses.belongsToMany(Students, { through: "id" });
-Students.hasOne(Campuses, { foreignKey: "id" });
+Campus.hasMany(Student);
+Student.belongsTo(Campus);
 
 module.exports = {
-  Campuses,
-  Students,
+  Campus,
+  Student,
 };
+
+//belongstomany --> many to many relationships
