@@ -9,8 +9,8 @@ router.get("/", async (req, res, next) => {
     const allStudent = await Student.findAll();
 
     allStudent
-      ? res.status(200).json(allStudent) // if allStudent is truthy
-      : res.status(404).send("Student List Not Found"); // if allStudent is falsey
+      ? res.status(200).json(allStudent) 
+      : res.status(404).send("Student List Not Found");
   } catch (error) {
     next(error);
   }
