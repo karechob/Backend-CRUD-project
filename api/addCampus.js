@@ -4,7 +4,7 @@ const { Campus, Student } = require('../db/models'); //Imports the Campus and St
 
 //Defines a route handler for the POST request
 router.post('/campus', async (req, res, next) => {
-    try { //Destructures the below shown properties
+    try { //Destructures the below shown properties from the body
         const { name, imageUrl, address, description } = req.body;
     //creates a new campus object from the campus model
         const newCampus = await Campus.create({ name, imageUrl, address, description });
