@@ -1,18 +1,45 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { Campus } = require("../db/models");
+const { Campus, Student } = require('../db/models');
 
-// Root here is localhost:8080/api/Campuss/
-
-router.get("/", async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
   try {
-    const allCampus = await Campus.findAll();
-    console.log("this is all campus: " + allCampus)
-    allCampus
-      ? res.status(200).json(allCampus)
-      : res.status(404).send("Campus List Not Found");
+    const campusId = req.params.id;
+    const campus = await Campus.findByPk(campusId, { include: Student });
+
+    if (!campus) {
+      return res.status(404).json({ error: 'Campus not found' });
+    }
+
+    res.json(campus);
   } catch (error) {
-    console.log(error);
+    next(error);
+  }
+});
+
+router.post('/', async (req, res, next) => {
+  try {
+      const { name, imageUrl, address, description } = req.body;
+
+      const newCampus = await Campus.create({ name, imageUrl, address, description });
+
+      res.status(201).json(newCampus);
+  } catch (error) {
+
+      next(error);
+  }
+});
+
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const campusId = req.params.id;
+
+    await Campus.destroy({ where: { id: campusId } });
+
+    res.json({ message: 'Campus removed successfully' });
+  } catch (error) {
+
+    next(error);
   }
 });
 

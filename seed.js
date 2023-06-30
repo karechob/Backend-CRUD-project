@@ -1,5 +1,5 @@
 const db = require("./db");
-const { Shoes, Shopper, Campus, Student } = require("./db/models");
+const {Campus, Student } = require("./db/models");
 
 const seedCampus = [
   { 
