@@ -2,9 +2,12 @@ const router = require("express").Router();
 
 // Already mounted on /api/
 router.use("/allcampuses", require("./campus"));
-router.use("/allstudents", require("./students"));
+// Mounts the "/allcampuses" route 
 
-// 404 Handling
+router.use("/allstudents", require("./students"));
+// Mounts the "/allstudents" route 
+
+// Error 404 Handling
 router.use((req, res, next) => {
   const error = new Error("404 Not Found");
   error.status = 404;
@@ -12,3 +15,4 @@ router.use((req, res, next) => {
 });
 
 module.exports = router;
+// Export the router object
