@@ -16,6 +16,8 @@ router.get("/", async (req, res, next) => {
 
     allCampus
       ? res.status(200).json(allCampus)
+      //If there are no campuses, send a response with status code 404
+//And error message (Campus List Not found) 
       : res.status(404).send("Campus List Not Found");
   } catch (error) {
 
