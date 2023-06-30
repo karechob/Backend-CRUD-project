@@ -1,5 +1,9 @@
-const { DataTypes } = require("sequelize");
-const db = require("../db");
+const { DataTypes } = require("sequelize");// Destructures the DataTypes object 
+const db = require("../db");//Imports the db object 
+
+
+//Creates a Table model named Campus 
+//with columns named below and their datatypes
 
 const Campus = db.define("campus", {
   name: {
@@ -21,4 +25,5 @@ const Campus = db.define("campus", {
   },
 });
 
+// Export the Campus model
 module.exports = Campus;
