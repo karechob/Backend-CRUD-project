@@ -1,7 +1,9 @@
 const { DataTypes } = require("sequelize");
-const db = require("../db");
+const db = require("../db");//Imports the db object
 
+//Creates a Table named Student as a model in the DB
 const Student = db.define("student", {
+//Defines the "Student" model using the define method of the db object  
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -28,4 +30,5 @@ const Student = db.define("student", {
   },
 });
 
+// Export the "Student" model
 module.exports = Student; 

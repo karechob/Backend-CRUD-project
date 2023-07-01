@@ -1,7 +1,9 @@
 const { DataTypes } = require("sequelize");
-const db = require("../db");
+const db = require("../db");//Imports the db object
 
+//Creates a Table named Campus as a model in the DB
 const Campus = db.define("campus", {
+// Defines the "Campus" model using the "define" method of the "db" object
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -21,4 +23,6 @@ const Campus = db.define("campus", {
   },
 });
 
+
 module.exports = Campus;
+// Exports the "Campus" model
