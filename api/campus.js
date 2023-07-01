@@ -54,5 +54,40 @@ router.delete('/:id', async (req, res, next) => {
   }
 });
 
+//Campus update type Tested & Worked Successfully
+
+router.put('/:id', async (req, res, next) => {
+  try {
+    const campusId = req.params.id;
+    const { name, address, description } = req.body;
+
+    // Find the campus by ID
+    const campus = await Campus.findByPk(campusId);
+
+    if (!campus) {
+      // If the campus is not found, send a response with status code 404 and the error message (Campus not found)
+      return res.status(404).json({ error: 'Campus not found' });
+    }
+
+    // Update the campus properties with the provided data
+    campus.name = name;
+    campus.address = address;
+    //campus.imageUrl = imageUrl;
+    campus.description = description;
+
+    // Save the updated campus to the database
+    await campus.save();
+
+    // Send a response with the updated campus
+    res.json(campus);
+  } catch (error) {
+    // Handling any errors that occur
+    next(error);
+  }
+});  
+
+
+
+
 //Exports the router object.
 module.exports = router;
