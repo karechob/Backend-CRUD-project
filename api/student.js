@@ -59,5 +59,40 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+//Code for Student router Update 
+
+router.put('/:id', async (req, res, next) => {
+  try {
+    const studentId = req.params.id;
+    const { firstName, lastName, imageUrl, gpa } = req.body;
+
+    // Find the student by ID
+    const student = await Student.findByPk(studentId); //{ include: Campus });
+
+    if (!student) {
+// If the student is not found, send a response with status code 404 
+//And the error message (student not found)
+      return res.status(404).json({ error: 'Student not found' });
+    }
+
+    // Update the campus properties with the provided data
+    student.firstName = firstName;
+    student.lastName = lastName;
+    student.imageUrl = imageUrl;
+    student.gpa = gpa;
+
+    // Save the updated campus to the database
+    await student.save();
+
+    // Send a response with the updated student
+    res.json(student);
+  } catch (error) {
+    // Handling any errors that occur
+    next(error);
+  }
+});  
+
+
+
 // Export the router object 
 module.exports = router;
