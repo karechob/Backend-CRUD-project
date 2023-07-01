@@ -66,7 +66,8 @@ router.put('/:id', async (req, res, next) => {
     const studentId = req.params.id;
     const { firstName, lastName, imageUrl, gpa } = req.body;
 
-    // Find the student by ID
+    // Find the student by ID 
+//[Modified MUST INCLUDE CAMPUS INFO-BUT Still trying to update campus info]
     const student = await Student.findByPk(studentId); //{ include: Campus });
 
     if (!student) {
