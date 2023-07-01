@@ -59,7 +59,7 @@ router.delete('/:id', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const campusId = req.params.id;
-    const { name, address, description } = req.body;
+    const { name, address, imageUrl, description } = req.body;
 
     // Find the campus by ID
     const campus = await Campus.findByPk(campusId);
@@ -72,7 +72,7 @@ router.put('/:id', async (req, res, next) => {
     // Update the campus properties with the provided data
     campus.name = name;
     campus.address = address;
-    //campus.imageUrl = imageUrl;
+    campus.imageUrl = imageUrl;
     campus.description = description;
 
     // Save the updated campus to the database
