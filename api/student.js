@@ -64,11 +64,11 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const studentId = req.params.id;
-    const { firstName, lastName, imageUrl, gpa } = req.body;
+    const { firstName, lastName, imageUrl, gpa, campusId} = req.body;
 
     // Find the student by ID 
 //[Modified MUST INCLUDE CAMPUS INFO-BUT Still trying to update campus info]
-    const student = await Student.findByPk(studentId); //{ include: Campus });
+    const student = await Student.findByPk(studentId, {include: Campus }); //, {include: Campus }
 
     if (!student) {
 // If the student is not found, send a response with status code 404 
@@ -81,6 +81,8 @@ router.put('/:id', async (req, res, next) => {
     student.lastName = lastName;
     student.imageUrl = imageUrl;
     student.gpa = gpa;
+    student.campusId = campusId;
+    student.CampusId = campusId;
 
     // Save the updated campus to the database
     await student.save();
