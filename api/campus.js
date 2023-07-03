@@ -74,6 +74,7 @@ router.put('/:id', async (req, res, next) => {
     campus.address = address;
     campus.imageUrl = imageUrl;
     campus.description = description;
+  
 
     // Save the updated campus to the database
     await campus.save();
