@@ -81,7 +81,7 @@ router.put('/:id', async (req, res, next) => {
     student.lastName = lastName;
     student.imageUrl = imageUrl;
     student.gpa = gpa;
-    student.campusId = campusId;
+    // student.campusId = campusId;
     student.CampusId = campusId;
 
     // Save the updated campus to the database
