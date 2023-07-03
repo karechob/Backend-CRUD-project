@@ -64,11 +64,11 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const studentId = req.params.id;
-    const { firstName, lastName, imageUrl, gpa } = req.body;
+    const { firstName, lastName, imageUrl, gpa, campusId, name, address, description } = req.body;
 
     // Find the student by ID 
 //[Modified MUST INCLUDE CAMPUS INFO-BUT Still trying to update campus info]
-    const student = await Student.findByPk(studentId); //{ include: Campus });
+    const student = await Student.findByPk(studentId, { include: Campus });
 
     if (!student) {
 // If the student is not found, send a response with status code 404 
@@ -81,6 +81,24 @@ router.put('/:id', async (req, res, next) => {
     student.lastName = lastName;
     student.imageUrl = imageUrl;
     student.gpa = gpa;
+  
+     // Check if campusId is provided
+     if (campusId) {
+        const campus = await Campus.findByPk(campusId);
+        
+        if (!campus) {
+          // If the campus is not found, send a response with status code 404 and the error message
+          return res.status(404).json({ error: 'Campus not found' });
+        }
+        //student.campusId = campusId; not necessary
+        // Update the campus properties with the provided data
+        campus.name = name;
+        //campus.imageUrl = imageUrl; (conflicts with student imageUrl)
+        campus.address = address;
+        campus.description = description;
+        // Save the updated campus to the database
+        await campus.save();
+      }
 
     // Save the updated campus to the database
     await student.save();
