@@ -93,7 +93,7 @@ router.put('/:id', async (req, res, next) => {
         //student.campusId = campusId; 
         // Update the campus properties with the provided data
         campus.name = name;
-        //campus.imageUrl = imageUrl; (conflicts with student imageUrl)
+        campus.imageUrl = imageUrl; //(conflicts with student imageUrl)
         campus.address = address;
         campus.description = description;
         // Save the updated campus to the database
