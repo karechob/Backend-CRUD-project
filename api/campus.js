@@ -5,7 +5,8 @@ const { Campus, Student } = require('../db/models'); //Imports the Campus and St
 router.get('/:id', async (req, res, next) => {
   // Retrieving a specific campus by ID
   try {
-    const campusId = req.params.id;
+    const campusId = parseInt(req.params.id);
+    console.log(req.params)
     const campus = await Campus.findByPk(campusId, { include: Student });
 
     if (!campus) {

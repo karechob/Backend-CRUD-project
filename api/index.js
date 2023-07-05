@@ -1,10 +1,10 @@
 const router = require("express").Router();//Creates a router object
 
 // Already mounted on /api/
-router.use("/allcampuses", require("./Allcampus"));
+router.use("/campuses", require("./Allcampus"));
 //Gets and Mounts the "/allcampuses" route
 
-router.use("/allstudents", require("./Allstudents"));
+router.use("/students", require("./Allstudents"));
 //Gets and Mounts the "/allstudents" route
 
 router.use("/campus",require("./campus"));
