@@ -46,7 +46,7 @@ router.delete('/:id', async (req, res, next) => {
 //Create new Student
 router.post('/', async (req, res, next) => {
     try {
-        const { firstName, lastName, email, imageUrl, gpa, campusId } = req.body;
+        const {firstName, lastName, email, imageUrl, gpa, campusId } = req.body;
       
   // Create a new student using the provided data      
         const newStudent = await Student.create({ firstName, lastName, email, imageUrl, gpa, campusId });
@@ -64,7 +64,7 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const studentId = req.params.id;
-    const { firstName, lastName, imageUrl, gpa, campusId, name, address, description } = req.body;
+    const { firstName, lastName, email, gpa, campusId} = req.body;
 
     // Find the student by ID 
 //[Modified MUST INCLUDE CAMPUS INFO-BUT Still trying to update campus info]
@@ -79,7 +79,8 @@ router.put('/:id', async (req, res, next) => {
     // Update the campus properties with the provided data
     student.firstName = firstName;
     student.lastName = lastName;
-    student.imageUrl = imageUrl;
+    student.email = email;
+    // student.imageUrl = imageUrl;
     student.gpa = gpa;
   
      // Check if campusId is provided
@@ -92,12 +93,12 @@ router.put('/:id', async (req, res, next) => {
         }
         //student.campusId = campusId; 
         // Update the campus properties with the provided data
-        campus.name = name;
-        campus.imageUrl = imageUrl; //(conflicts with student imageUrl)
-        campus.address = address;
-        campus.description = description;
+        // campus.name = name;
+        // campus.imageUrl = imageUrl; //(conflicts with student imageUrl)
+        // campus.address = address;
+        // campus.description = description;
         // Save the updated campus to the database
-        await campus.save();
+        // await campus.save();
       }
 
     // Save the updated campus to the database
