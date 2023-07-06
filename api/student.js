@@ -91,14 +91,7 @@ router.put('/:id', async (req, res, next) => {
           // If the campus is not found, send a response with status code 404 and the error message
           return res.status(404).json({ error: 'Campus not found' });
         }
-        //student.campusId = campusId; 
-        // Update the campus properties with the provided data
-        // campus.name = name;
-        // campus.imageUrl = imageUrl; //(conflicts with student imageUrl)
-        // campus.address = address;
-        // campus.description = description;
-        // Save the updated campus to the database
-        // await campus.save();
+        student.campusId = campusId;
       }
 
     // Save the updated campus to the database
