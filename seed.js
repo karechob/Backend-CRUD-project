@@ -3,32 +3,32 @@ const { Campus, Student } = require("./db/models");
 
 const seedCampus = [
   {
-    name: "Fake College",
-    imageUrl: "https://media.istockphoto.com/id/1142918319/photo/college-students-on-university-campus.jpg?s=612x612&w=0&k=20&c=FaT9h0xJXSF3AzofWb9ozJtSqaxS4m91uH6C1lmL6xc=",
+    name: "McCormick College",
+    imageUrl: "https://www.travelandleisure.com/thmb/E5szi7N2r1eN-8b3vkl5STvWz9o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/notre-dame-university-COLLEGECAMP0421-039ce0bfd40b4e429b825c6fb6ebfaa6.jpg",
     address: "1234 Ave 36",
-    description: "First college added"
+    description: "Shining with untarnished honor."
   },
   {
-    name: "University of Example",
-    imageUrl: "https://media.istockphoto.com/photos/university-campus-picture-id1303262839?b=1&k=20&m=1303262839&s=170667a&w=0&h=ZCtP-_Kxv04ioVJ1OQVYPb00vT3tcZDCsjr6lz3oAtM=",
+    name: "University of South Lake",
+    imageUrl: "https://s28151.pcdn.co/wp-content/uploads/2020/08/our-campus-location-banner.jpg",
     address: "5678 Street Blvd",
     description: "A renowned university for exemplary education"
   },
   {
     name: "Tech Institute",
-    imageUrl: "https://media.istockphoto.com/photos/university-students-on-campus-picture-id1296095776?b=1&k=20&m=1296095776&s=170667a&w=0&h=ajvYjQjN92bcnW7uLHaxFJrcOn9wz6YJblvswqQG2us=",
+    imageUrl: "https://www.cnu.org/sites/default/files/styles/public_square_feature_image/public/BostonCollege1.jpg?itok=iKc35HST",
     address: "9012 Road Ave",
     description: "Leading the way in technology education"
   },
   {
     name: "Liberty University",
-    imageUrl: "https://media.istockphoto.com/photos/college-campus-with-students-in-spring-picture-id1174222709?b=1&k=20&m=1174222709&s=170667a&w=0&h=PeEB9PYWOTvL0vW5bk_Gj61RQbgt1uQsfGKJ8xyynLE=",
+    imageUrl: "https://www.syracuse.edu/images/XD67YLsCQaG3m0nBpr3iW9dkkvc=/3960/width-1100/campus-in-autumn-dome-background_08-10-202115-21-02.jpg",
     address: "3456 Lane St",
     description: "Where freedom and education go hand in hand"
   },
   {
     name: "Global University",
-    imageUrl: "https://media.istockphoto.com/photos/diverse-college-students-discussing-projects-in-campus-quad-picture-id1271755642?b=1&k=20&m=1271755642&s=170667a&w=0&h=KH2GmxYgIJHh04Ho1Tn9qjgj8yD2YQIqJlQqJKzg-zI=",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
     address: "7890 Court Rd",
     description: "Preparing students for a global future"
   },
@@ -48,7 +48,7 @@ const seedStudent = [
     firstName: "Bob",
     lastName: "Johnson",
     email: "bob.johnson@example.com",
-    imageUrl: "https://media.istockphoto.com/photos/portrait-of-smiling-young-man-picture-id1308607685?b=1&k=20&m=1308607685&s=170667a&w=0&h=ln6wuhX5iOibXhsH-KV8rqfUixXeL6r84UNYPScnV4Y=",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
     gpa: 3.2,
     campusId: 1,
   },
@@ -56,7 +56,7 @@ const seedStudent = [
     firstName: "Emma",
     lastName: "Smith",
     email: "emma.smith@example.com",
-    imageUrl: "https://media.istockphoto.com/photos/portrait-of-a-smiling-young-woman-outdoors-picture-id1306401879?b=1&k=20&m=1306401879&s=170667a&w=0&h=trzt-ijeh5rXxKKR5IugM8azpVJYLYrRd0cqZTLX4L0=",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
     gpa: 3.8,
     campusId: 2,
   },
@@ -64,7 +64,7 @@ const seedStudent = [
     firstName: "John",
     lastName: "Doe",
     email: "john.doe@example.com",
-    imageUrl: "https://media.istockphoto.com/photos/portrait-of-happy-african-american-student-picture-id1241564424?b=1&k=20&m=1241564424&s=170667a&w=0&h=ue9Xa5nW00eIvKzW6EbPChc7t-Wha4CY6x56glJfNfQ=",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
     gpa: 3.9,
     campusId: 2,
   },
@@ -72,7 +72,7 @@ const seedStudent = [
     firstName: "Sarah",
     lastName: "Johnson",
     email: "sarah.johnson@example.com",
-    imageUrl: "https://media.istockphoto.com/photos/portrait-of-a-smiling-woman-in-a-library-picture-id1295282381?b=1&k=20&m=1295282381&s=170667a&w=0&h=QF0VB7WhQ9YdeENs57gs6VXDETH7Tq9kOfF4GZ0sw9k=",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
     gpa: 3.7,
     campusId: 3,
   },
