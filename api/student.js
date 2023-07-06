@@ -92,11 +92,14 @@ router.put('/:id', async (req, res, next) => {
           return res.status(404).json({ error: 'Campus not found' });
         }
         student.campusId = campusId;
+        student.dataValues.campus = campus;
+        // console.log(student.campus)
+        console.log(student.dataValues)
       }
 
     // Save the updated campus to the database
     await student.save();
-
+   // console.log(student)
     // Send a response with the updated student
     res.json(student);
   } catch (error) {
