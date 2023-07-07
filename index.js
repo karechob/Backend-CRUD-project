@@ -1,5 +1,5 @@
 const express = require("express");//Imports the Express.js module.
-const db = require("./db");// Imports the db object
+// const db = require("./db");// Imports the db object
 const cors = require("cors");
 const app = express();//Create an instance of the express application
 const PORT = 8080;// Setting the port number for the server
@@ -27,7 +27,7 @@ app.use((error, req, res, next) => {
 
 
 // Define an asynchronous function to synchronize the DB
-const syncDB = async() => await db.sync(); // {force: true} clear db
+// const syncDB = async() => await db.sync(); // {force: true} clear db
 
 //Defining a function to start the server
 const serverRun = () => {
@@ -40,7 +40,7 @@ const serverRun = () => {
 };
 
 
-syncDB();
+// syncDB();
 // Synchronize the database
 
 serverRun();
