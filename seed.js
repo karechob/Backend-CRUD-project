@@ -33,6 +33,60 @@ const seedCampus = [
     description: "Preparing students for a global future"
   },
   {
+    name: "Sunshine State University",
+    imageUrl: "https://www.visitflorida.com/content/dam/visitflorida/en-us/images/florida-beach-destinations-hero-desktop.jpg",
+    address: "2468 Palm Beach Blvd",
+    description: "Embrace the sun and beach vibes while learning"
+  },
+  {
+    name: "Mountainview College",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "3579 Summit Avenue",
+    description: "Education with a breathtaking mountain backdrop"
+  },
+  {
+    name: "Oceanfront University",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "9876 Shoreline Drive",
+    description: "Learning by the waves and coastal breeze"
+  },
+  {
+    name: "Innovation Institute",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "1357 Tech Lane",
+    description: "Igniting innovation and creativity in education"
+  },
+  {
+    name: "Starlight University",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "1010 Galaxy Avenue",
+    description: "Unleash your potential under the starlit sky"
+  }, 
+  {
+    name: "Maplewood College",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "222 Maple Street",
+    description: "Where education and nature harmonize"
+  },
+  {
+    name: "Evergreen University",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "456 Evergreen Lane",
+    description: "Immerse yourself in the beauty of learning"
+  },
+  {
+    name: "Seaside College",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "789 Seaside Avenue",
+    description: "Education with a view of the ocean"
+  },
+  {
+    name: "Harmony University",
+    imageUrl: "https://www.lasalle.edu/wp-content/uploads/sites/182/2014/12/ext082090905.jpg",
+    address: "543 Harmony Road",
+    description: "Where knowledge and harmony come together"
+  },
+  {
     name: "Lovak College",
     imageUrl: "https://www.travelandleisure.com/thmb/E5szi7N2r1eN-8b3vkl5STvWz9o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/notre-dame-university-COLLEGECAMP0421-039ce0bfd40b4e429b825c6fb6ebfaa6.jpg",
     address: "1234 Ave 35",
@@ -63,7 +117,6 @@ const seedCampus = [
     description: "Preparing students for a global future"
   },
 ];
-
 
 const seedStudent = [
   {
@@ -105,6 +158,46 @@ const seedStudent = [
     imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
     gpa: 3.7,
     campusId: 3,
+  },
+  {
+    firstName: "Michael",
+    lastName: "Williams",
+    email: "michael.williams@example.com",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
+    gpa: 3.6,
+    campusId: 4,
+  },
+  {
+    firstName: "Olivia",
+    lastName: "Brown",
+    email: "olivia.brown@example.com",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
+    gpa: 3.4,
+    campusId: 4,
+  },
+  {
+    firstName: "Ethan",
+    lastName: "Taylor",
+    email: "ethan.taylor@example.com",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
+    gpa: 3.3,
+    campusId: 5,
+  },
+  {
+    firstName: "Sophia",
+    lastName: "Clark",
+    email: "sophia.clark@example.com",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
+    gpa: 3.1,
+    campusId: 5,
+  },
+  {
+    firstName: "Daniel",
+    lastName: "Thomas",
+    email: "daniel.thomas@example.com",
+    imageUrl: "https://freesvg.org/img/abstract-user-flat-4.png",
+    gpa: 3.9,
+    campusId: 6,
   },
   {
     firstName: "Sarah",
@@ -163,29 +256,3 @@ const seed = async () => {
 };
 
 seed().then(() => process.exit());
-
-//   firstName: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//   },
-//   lastName: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//   },
-//   email: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//       validate: {
-//         isEmail: true,
-//       },
-//   },
-//   imageUrl: {
-//     defaultValue: "https://s28151.pcdn.co/wp-content/uploads/2020/08/our-campus-location-banner.jpg",
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//   },
-//   gpa: {
-//     type: DataTypes.DECIMAL(1,1),
-//     allowNull: false,
-//   },
-// });
