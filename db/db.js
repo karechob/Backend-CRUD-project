@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize");
 require('dotenv').config();
 const pg = require("pg");
 
-const db = new Sequelize(process.env.DATABASE_URL)
+const db = new Sequelize(process.env.USER_NAME, process.env.PASSWORD, process.env.DATABASE_URL)
 
 // const db = new Sequelize(`postgres://localhost:5432/${name}`, {
 //     logging: false,
