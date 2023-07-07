@@ -3,13 +3,17 @@ require('dotenv').config();
 
 
 //npm run start
-const db = new Sequelize(process.env.DATABASE_URL, process.env.USER_NAME, process.env.PASSWORD, {
-  logging: true,
-
-  dialect: "postgres", /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
-  dialectModule: require('pg') ,
-
-}) 
+  const db = new Sequelize(process.env.DATABASE_URL, {
+    logging: true,
+    dialect: "postgres",
+    dialectModule: require('pg'),
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false // required for self-signed certificates
+      }
+    },
+  });
 
 db.authenticate()
   .then(() => console.log('Connection has been established successfully.'))
