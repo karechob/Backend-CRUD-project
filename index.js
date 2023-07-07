@@ -10,9 +10,7 @@ app.use(cors())
 
 // Mount on API
 app.use("/api", require("./api"));
- app.get('/', (req, res) => {
-    res.send('Hey this our API running 🥳')
-  })
+
 
 // Define an asynchronous function to synchronize the DB
 const syncDB = async() => await db.sync({}); // {force: true} clear db
@@ -26,6 +24,10 @@ const serverRun = () => {
         console.log(`live on port: ${PORT}`)
     });
 };
+
+app.get('/', (req, res) => {
+    res.send('Hey this our API running 🥳')
+  })
 
 
 syncDB();
