@@ -3,17 +3,31 @@ const db = require("./db");// Imports the db object
 const cors = require("cors");
 const app = express();//Create an instance of the express application
 const PORT = 8080;// Setting the port number for the server
+app.use(cors())
 
 //A middleware parser for JSON bodies
 app.use(express.json())
-app.use(cors())
+app.use(express.urlencoded({ extended: true }));
+
 
 // Mount on API
 app.use("/api", require("./api"));
 
+app.get('/', (req, res) => {
+  res.send('Hey this our API running 🥳')
+})
+
+app.use((error, req, res, next) => {
+  console.log(error)
+  res.send("hey this is my api not running")
+
+})
+
+
+
 
 // Define an asynchronous function to synchronize the DB
-const syncDB = async() => await db.sync({}); // {force: true} clear db
+const syncDB = async() => await db.sync(); // {force: true} clear db
 
 //Defining a function to start the server
 const serverRun = () => {
@@ -24,10 +38,6 @@ const serverRun = () => {
         console.log(`live on port: ${PORT}`)
     });
 };
-
-app.get('/', (req, res) => {
-    res.send('Hey this our API running 🥳')
-  })
 
 
 syncDB();
