@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Mount on API
-app.use("/api", require("./api"));
+app.use("api", require("./api"));
 
 app.get('/', (req, res) => {
   res.send('Hey this our API running 🥳')
